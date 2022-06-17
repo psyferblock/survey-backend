@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('admin-answers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('answers');
+
         });
     }
 

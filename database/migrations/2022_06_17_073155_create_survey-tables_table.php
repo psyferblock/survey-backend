@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('survey-tables', function (Blueprint $table) {
+        Schema::create('survey-table', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->integer("surveys-taken")->default(0);
+
+
         });
     }
 
