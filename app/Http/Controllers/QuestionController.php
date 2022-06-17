@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -35,14 +35,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->save();
+        $question=new Admin_question();
+        $question->name = $request->name;
+        $question->save();
         
         return response()->json([
             "status" => "Success"
         ], 200);
+    
     }
 
     /**

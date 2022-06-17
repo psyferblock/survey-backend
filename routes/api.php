@@ -29,7 +29,7 @@ Route::group(['prefix' => 'v1'], function() {
     });
     Route::group(['prefix' => 'user'], function() {
         // route submit name and email to take survey
-        Route::post('/add_user', [UserController::class, 'store']);
+        Route::get('/add_user', [UserController::class, 'store']);
 
         // route to fill questions of the survey/submit answers.
         Route::post('/add_answers', [AnswerController::class, 'store']);

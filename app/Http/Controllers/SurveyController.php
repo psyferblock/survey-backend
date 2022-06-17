@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Answer extends Controller
+class SurveyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,8 +34,15 @@ class Answer extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $survey=new Survey();
+        $survey->name = $request->name;
+        $survey->save();
+        
+        return response()->json([
+            "status" => "Success"
+        ], 200);
     }
+    
 
     /**
      * Display the specified resource.

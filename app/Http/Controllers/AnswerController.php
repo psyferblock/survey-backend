@@ -14,6 +14,7 @@ class AnswerController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -35,6 +36,14 @@ class AnswerController extends Controller
     public function store(Request $request)
     {
         //
+        $answer=new AnswerController();
+        $answer->name = $request->name;
+        $answer->save();
+        
+        return response()->json([
+            "status" => "Success"
+        ], 200);
+    
     }
 
     /**
