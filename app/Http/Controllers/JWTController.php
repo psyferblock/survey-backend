@@ -40,7 +40,8 @@ class JWTController extends Controller
         $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => Hash::make($request->password)
+                'password' => Hash::make($request->password),
+                "status"=>$request->status
             ]);
 
         return response()->json([
@@ -59,6 +60,7 @@ class JWTController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string|min:6',
+
         ]);
 
         if ($validator->fails()) {
